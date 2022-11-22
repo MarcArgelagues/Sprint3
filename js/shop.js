@@ -6,10 +6,12 @@ var cartList = [];
 // Improved version of cartList. Cart is an array of products (objects), but each one has a quantity field to define its quantity, so these products are not repeated.
 var cart = [];
 
-var total = 0;
+let total=1
+
 
 // Exercise 1
 function buy(id) {
+
 let producte=confirm("Vols afegir el producte "+products[id-1].name+" ?");
 
 if (producte==true){
@@ -21,18 +23,18 @@ if (producte==true){
         producte = products[i];
         if (producte.id == id) {
             cartList.push(producte);
-       
+       document.getElementById("count_product").innerHTML=total++
          
   }}}
  
 
   else {alert("No s'ha afegit cap producte a la cistella")}
-  console.log(cartList);
+  console.log(cartList, total);
 
 } 
 
 // Exercise 2
-function cleanCart() {cartList.length=0; cart.length=0; suma=0;
+function cleanCart() {cartList.length=0; cart.length=0; suma=0;document.getElementById("count_product").innerHTML=0;total=1;
     printCart(0);
 alert("Has buidat la cistella")
 }
@@ -220,3 +222,4 @@ function open_modal(){
 	console.log("Open Modal");
 	printCart();
 }
+
