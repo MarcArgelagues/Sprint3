@@ -56,9 +56,12 @@ console.log(cartList.price)
 }
 
 
+
+
 // Exercise 4
 function generateCart() {
-   
+
+   cart.length=0
     
     for (let added of cartList){
         if (cart.length > 0){
@@ -107,7 +110,6 @@ else {}
 // Exercise 6
 function printCart() {
     calculateTotal()
-    generateCart()
     applyPromotionsCart()
     
 
@@ -219,6 +221,8 @@ let eliminat=cart[id]
 }
 
 function open_modal(){
+
+  generateCart()
 	console.log("Open Modal");
 	printCart();
 }
